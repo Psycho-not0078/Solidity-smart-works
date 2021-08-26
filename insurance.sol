@@ -3,6 +3,7 @@ pragma solidity >=0.7.0 <0.9.0;
 contract Insurance{
     struct User {
         uint id;
+        address ad;
         string name;
         ufixed claimable;
         int role;
