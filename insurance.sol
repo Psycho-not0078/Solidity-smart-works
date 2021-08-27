@@ -70,7 +70,6 @@ contract Insurance{
             claim[_claimId].claimStatus="Not Verified|Not Approved";
         }
     }
-    
     function claimStatusChange(int _status, uint _claimId) public {
         require(userAddress[msg.sender].role==1);
         if (_status==1){
@@ -82,6 +81,13 @@ contract Insurance{
     }
     function viewClaimStatus(uint _claimId) public view returns(string memory) {
         return claim[_claimId].claimStatus;
+    }
+    function viewClaims(int _claimid) public returns(uint , string memory, uint, string memory){
+        require(userAddress[msg.sender].role==1);
+        string memory Claimer = userAddress[claim[_claimid].claimBy].name;
+        uint Amt=claim[_claimid].claimAmount;
+        string memory status=claim[_claimid].claimStatus;
+        return ();
     }
     
 }
