@@ -10,7 +10,7 @@ The management cannot do the actions of the verifiers or the customers.
 
 this implies that the user's role defines the possible function calls.
 
-the functions in the systems are:
+the functions in the systems are:<br>
 1.AddNewUser(Username, Details)<br>
 2.RequestClaim(ClaimDetails)<br>
 3.VerifyClaim(ClaimId,Status)<br>
