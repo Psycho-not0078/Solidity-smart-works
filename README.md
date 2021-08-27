@@ -11,10 +11,10 @@ The management cannot do the actions of the verifiers or the customers.
 this implies that the user's role defines the possible function calls.
 
 the functions in the systems are:
-AddNewUser(Username, Details)
-RequestClaim(ClaimDetails)
-VerifyClaim(ClaimId,Status)
-ApproveClaim(ClaimId,Result)
-ViewClaimStatus(ClaimId)
-RemoveClaim(ClaimId)
-RemoveUser(Username)
+1.AddNewUser(Username, Details)<br>
+2.RequestClaim(ClaimDetails)<br>
+3.VerifyClaim(ClaimId,Status)<br>
+4.ApproveClaim(ClaimId,Result)<br>
+5.ViewClaimStatus(ClaimId)<br>
+6.RemoveClaim(ClaimId)<br>
+7.RemoveUser(Username)<br>
