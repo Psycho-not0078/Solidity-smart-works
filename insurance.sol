@@ -21,8 +21,8 @@ contract Insurance{
     
     struct Renew{
         uint renewId;
+        address renewer;
         uint amount;
-        bool approvalStatus;
     }
     mapping(uint => Renew) public renew;//mapping a renew request to a integer
     
@@ -30,7 +30,7 @@ contract Insurance{
     uint public claimCount;//counter
     uint public renewCount;//counter
     
-    constructor () public {
+    constructor() public {
         init(msg.sender);
     }
     
@@ -98,5 +98,11 @@ contract Insurance{
         return ret(_claimid,Claimer,Amt,status);
     }
     
-    
+    function renewal(uint _amount) public{
+        require(userAddress[msg.sender].role==3);
+        renewCount++;
+        renew[renewCount]=Renew(renewCount,msg.sender,_amount);
+        userAddress[msg.sender].claimable+=_amount;
+        user[userAddress[msg.sender].id].claimable+=_amount;
+    }
 }
