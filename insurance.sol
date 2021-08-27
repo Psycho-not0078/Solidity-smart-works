@@ -9,7 +9,7 @@ contract Insurance{
         int role;
     }
     mapping(uint => User) public user;
-    mapping(address => User) private userAddress;
+    mapping(address => user) private userAddress;
     struct Claim {
         uint claimId;
         address claimBy;
@@ -42,7 +42,9 @@ contract Insurance{
         claimCount++;
         claim[claimCount]=Claim(claimCount,msg.sender,_claimAmount,"Pending|Not Approved");
     }
-    function verifyClaim() public {
+    function verifyClaim(string memory _status) public {
+        require(userAddress[msg.sender].role==2);
+        
         
     }
     function viewClaimStatus(uint _claimId) public view returns(string memory) {
